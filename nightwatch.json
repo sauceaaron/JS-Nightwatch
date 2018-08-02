@@ -19,6 +19,7 @@
   },
 
   "test_workers" : {"enabled" : true, "workers" : "auto"},
+  "live_output" : true,
 
   "test_settings" : {
     "default" : {
@@ -33,6 +34,8 @@
       "username" : "${SAUCE_USERNAME}",
       "access_key" : "${SAUCE_ACCESS_KEY}",
 
+      "skip_testcases_on_fail": false,
+
       "desiredCapabilities": {
         "javascriptEnabled": true,
         "acceptSslCerts": true
@@ -41,25 +44,37 @@
 
     "chrome": {
       "desiredCapabilities": {
-        "platform": "Windows XP",
+        "platform": "Windows 10",
         "browserName": "chrome",
-        "version": "41"
+        "version": "latest",
+        "build": "nightwatch chrome tests"
       }
     },
 
     "firefox" : {
       "desiredCapabilities": {
-        "platform": "Windows XP",
+        "platform": "Windows 8",
         "browserName": "firefox",
-        "version": "33"
+        "version": "latest",
+        "build": "nightwatch firefox tests"
       }
     },
 
-    "internet_explorer_10" : {
+    "internet_explorer" : {
       "desiredCapabilities": {
         "platform": "Windows 7",
         "browserName": "internet explorer",
-        "version": "10"
+        "version": "11",
+        "build": "nightwatch ie tests"
+      }
+    },
+
+    "safari" : {
+      "desiredCapabilities": {
+        "platform": "MacOS 10.12",
+        "browserName": "Safari",
+        "version": "11",
+        "build": "nightwatch safari tests"
       }
     },
 
